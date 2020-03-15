@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getData } from './redux/roomsReducer';
 import Error from './pages/Error';
+import Loading from './components/Loading/Loading';
 
 const Home = lazy(() => import('./pages/Home'));
 const Rooms = lazy(() => import('./pages/Rooms'));
@@ -22,7 +23,7 @@ const App = ({ rooms, getData }) => {
         <div className="App">
             <Header />
 
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
                 <Switch>
                     <Route exact path='/' render={() => <Home />}/>
                     <Route exact path='/rooms' render={() => <Rooms />}/>
@@ -37,9 +38,10 @@ const App = ({ rooms, getData }) => {
 
                     <Route render={() => <Error/>}/>
                 </Switch>
+
+                <Footer />
             </Suspense>
 
-            <Footer />
         </div>
     );
 }
