@@ -1,10 +1,10 @@
-import React, { lazy, Suspense, useCallback } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getRoomsThunk } from './redux/roomsReducer';
+import { getData } from './redux/roomsReducer';
 import Error from './pages/Error';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -12,9 +12,11 @@ const Rooms = lazy(() => import('./pages/Rooms'));
 const SingleRoom = lazy(() => import('./pages/SingleRoom'));
 
 
-const App = ({ rooms, getRoomsThunk }) => {
+const App = ({ rooms, getData }) => {
 
-    useCallback(getRoomsThunk())
+    useEffect(() => {
+        getData()
+    }, [])
 
     return (
         <div className="App">
@@ -47,4 +49,4 @@ const mstp = state => ({
 })
 
 
-export default connect(mstp, { getRoomsThunk })(App);
+export default connect(mstp, { getData })(App);

@@ -15,10 +15,11 @@ const roomsReducer = (state = initialState, action) => {
     }
 }
 
-export const getRooms = rooms => ({ type: GET_ROOMS, rooms });
+const getRooms = rooms => ({ type: GET_ROOMS, rooms });
 
-export const getRoomsThunk = () => async dispatch => {
+export const getData = () => async dispatch => {
     await getAPI().then(response => {
+        console.log(response.items)
         dispatch(getRooms(response.items))
     })
 }
