@@ -1,0 +1,51 @@
+.banner {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--mainWhite);
+    padding: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .link {
+        a {
+            display: inline-block;
+            text-decoration: none;
+            letter-spacing: var(--mainSpacing);
+            color: var(--mainBlack);
+            background: var(--primaryColor);
+            padding: 0.4rem 0.9rem;
+            border: 1.5px solid var(--primaryColor);
+            transition: var(--mainTransition);
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                background: transparent;
+                color: var(--primaryColor);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .banner {
+      padding: 2rem 3rem;
+    }
+    .banner h1 {
+      font-size: 3rem;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .banner {
+      padding: 2rem 6rem;
+    }
+    .banner h1 {
+      font-size: 4rem;
+    }
+  }

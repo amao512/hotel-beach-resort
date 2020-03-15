@@ -1,0 +1,25 @@
+.footer {
+    background-color: var(--mainBlack);
+    padding: 2rem 0;
+    margin-top: 50px;
+    ul {
+        max-width: 80vw;
+        margin: 0 auto;
+        li {
+            display: inline;
+            padding: 0 10px;
+            border-right: 1px solid #fff;
+            &:last-child {
+                border: none;
+            }
+            a {
+                color: var(--mainWhite);
+                text-decoration: none;
+                transition: all .2s ease;
+                &:hover {
+                    color: var(--primaryColor);
+                }
+            }
+        }
+    }
+}

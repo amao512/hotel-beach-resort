@@ -1,0 +1,30 @@
+.header {
+    position: fixed;
+    padding: 15px 20px;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    right: 0;
+    left: 0;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    z-index: 999;
+    .logo {
+        margin: 0;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: bold;
+        color: #313131;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .header {
+        margin: 0;
+        .logo {
+            font-size: 18px;
+            // display: none;
+        }
+    }
+}
