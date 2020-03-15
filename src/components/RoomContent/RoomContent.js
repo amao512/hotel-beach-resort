@@ -15,7 +15,7 @@ const RoomContent = props => {
             <section className={s.roomInfo}>
                 <article className={s.desc}>
                     <h3>details</h3>
-                    <p>{description}</p>
+                    <p>{description.content[0].content[0].value}</p>
                 </article>
                 <article className={s.info}>
                     <h3>info</h3>

@@ -6,7 +6,7 @@ import s from './allRooms.module.scss';
 const AllRooms = ({ rooms }) => {
     if (rooms.length === 0) {
         return (
-          <div className="empty-search">
+          <div className={s.empty}>
             <h3>unfortunately no rooms matched your search parameters</h3>
           </div>
         );

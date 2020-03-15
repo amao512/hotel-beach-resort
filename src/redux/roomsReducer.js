@@ -1,4 +1,4 @@
-import data from '../data';
+import { getAPI } from '../api/api';
 
 const GET_ROOMS = 'GET_ROOMS';
 
@@ -18,9 +18,9 @@ const roomsReducer = (state = initialState, action) => {
 export const getRooms = rooms => ({ type: GET_ROOMS, rooms });
 
 export const getRoomsThunk = () => async dispatch => {
-    if(data){
-        await dispatch(getRooms(data));
-    }
+    await getAPI().then(response => {
+        dispatch(getRooms(response.items))
+    })
 }
 
 export default roomsReducer;

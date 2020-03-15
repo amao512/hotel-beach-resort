@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useCallback } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -14,9 +14,7 @@ const SingleRoom = lazy(() => import('./pages/SingleRoom'));
 
 const App = ({ rooms, getRoomsThunk }) => {
 
-    useEffect(() => {
-        getRoomsThunk()
-    }, [rooms])
+    useCallback(getRoomsThunk())
 
     return (
         <div className="App">

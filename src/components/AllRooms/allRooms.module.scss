@@ -10,6 +10,15 @@
     }
 }
 
+.empty {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+    padding: 1rem;
+    letter-spacing: var(--mainSpacing);
+  }
+  
+
 @media screen and (min-width: 776px) {
     .allRoomsCenter {
         width: 90vw;
